@@ -199,10 +199,9 @@ public class HTag: UIView {
     func updateTitlesColorsAndFontsDueToSelection() {
         backgroundColor = isSelected ? tagMainBackColor : tagSecondBackColor
         let textColor = isSelected ? tagMainTextColor : tagSecondTextColor
-        var attributes: [String: Any] = [:]
-        attributes[NSFontAttributeName] = tagFont
-        attributes[NSForegroundColorAttributeName] = textColor
-        button.setAttributedTitle(NSAttributedString(string: tagTitle, attributes: attributes), for: .normal)
+        var attributes: [NSAttributedStringKey: Any] = [:]
+        attributes[.font] = tagFont
+        attributes[.foregroundColor] = textColor
         if tagType == .cancel {
             cancelButton.tintColor = textColor
         }
@@ -215,10 +214,10 @@ public class HTag: UIView {
     }
     
     // MARK: - User interaction
-    func tapped(){
+    @objc func tapped(){
         delegate?.tagClicked(self)
     }
-    func cancelled() {
+    @objc func cancelled() {
         delegate?.tagCancelled(self)
     }
 }
