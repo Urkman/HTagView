@@ -192,7 +192,6 @@ public class HTag: UIView {
         updateTitlesColorsAndFontsDueToSelection()
         updateBorder()
         button.sizeToFit()
-        button.setTitle(tagTitle, for: .normal)
         layoutIfNeeded()
         invalidateIntrinsicContentSize()
     }
@@ -203,6 +202,7 @@ public class HTag: UIView {
         var attributes: [NSAttributedString.Key: Any] = [:]
         attributes[.font] = tagFont
         attributes[.foregroundColor] = textColor
+        button.setAttributedTitle(NSAttributedString(string: tagTitle, attributes: attributes), for: .normal)
         if tagType == .cancel {
             cancelButton.tintColor = textColor
         }
