@@ -330,10 +330,10 @@ open class HTagView: UIView {
     
     override open var intrinsicContentSize : CGSize {
         if tags.count == 0{
-            return CGSize(width: UIViewNoIntrinsicMetric, height: 0)
+            return CGSize(width: UIView.noIntrinsicMetric, height: 0)
         }else{
             let height = (tags.last?.frame.origin.y ?? 0) + (tags.last?.frame.height ?? 0) + marg
-            return CGSize(width: UIViewNoIntrinsicMetric, height: height )
+            return CGSize(width: UIView.noIntrinsicMetric, height: height )
         }
     }
     
