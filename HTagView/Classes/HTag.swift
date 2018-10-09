@@ -192,6 +192,7 @@ public class HTag: UIView {
         updateTitlesColorsAndFontsDueToSelection()
         updateBorder()
         button.sizeToFit()
+        button.setTitle(tagTitle, for: .normal)
         layoutIfNeeded()
         invalidateIntrinsicContentSize()
     }
